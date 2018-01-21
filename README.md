@@ -1,4 +1,3 @@
 # markdown-previewer
 markdown previewer
-* insert text
-* preview document realtime with markdowned
+* Document preview in realtime with markdowned
