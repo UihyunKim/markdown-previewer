@@ -1,8 +1,57 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Serif');
+@import 'mixins';
+
+$font-serif: 'Noto Serif', serif;
+* { @include box-sizing; }
 
 h1 {
-    font-size: 20px;
+  font: 2em $font-serif;
+  text-align: center;
 }
-h2 {
-    color: red;
+
+body {
+  margin: 0;
+  padding: 10px;
+
+  @include flexbox;
+  @include flex-direction(column);
+
+  #main {
+    .Marked {
+      @include flexbox;
+      @include flex-direction(column);
+
+      >* {
+        padding: 10px;
+      }
+
+      .input textarea {
+        width: 100%;
+        height: 60vh;
+      }
+    }
+
+    @media all and (min-width: 500px) {
+      .Marked{
+        @include flex-direction(row);
+        >* {
+          @include flex(1 100%);
+        }
+      }
+    }
+  }
+
+  #footer {
+    >* {
+      text-align: right;
+      padding: 0 10px;
+
+      a {
+        text-decoration: none;
+      }
+
+    }
+  }
+
+
 }
